@@ -1,0 +1,6 @@
+@ElmDocumentVerification_HostAddress = http://localhost:5072
+
+GET {{ElmDocumentVerification_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
