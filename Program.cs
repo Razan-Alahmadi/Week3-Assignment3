@@ -1,7 +1,7 @@
-using ElmDocumentVerification.Data; // Update to your correct namespace
+using ElmDocumentVerification.Data; 
 using Microsoft.EntityFrameworkCore;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure; // For MySQL
-using Microsoft.AspNetCore.Builder; // For Swagger
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure; 
+using Microsoft.AspNetCore.Builder; 
 
 var builder = WebApplication.CreateBuilder(args);
 
