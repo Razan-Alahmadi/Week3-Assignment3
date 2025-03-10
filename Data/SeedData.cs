@@ -25,14 +25,14 @@ namespace ElmDocumentVerification.Data
                     {
                         Name = "Admin User",
                         Email = "admin@example.com",
-                        Password = "admin123", // In a real app, hash the password!
+                        Password = "admin123", 
                         Role = "Admin"
                     },
                     new User
                     {
                         Name = "Regular User",
                         Email = "user@example.com",
-                        Password = "user123", // In a real app, hash the password!
+                        Password = "user123", 
                         Role = "User"
                     }
                 };
