@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ElmDocumentVerification")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7fb75eab1fbca913f86cdf0b60f0bcce281d6d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b2eb344f628bbc485e8e3839cad0dc7f30f888b")]
 [assembly: System.Reflection.AssemblyProductAttribute("ElmDocumentVerification")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ElmDocumentVerification")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

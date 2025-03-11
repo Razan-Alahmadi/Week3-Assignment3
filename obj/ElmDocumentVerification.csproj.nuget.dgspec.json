@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\file\\Desktop\\مجلد جديد\\ElmDocumentVerification\\ElmDocumentVerification.csproj": {}
+    "D:\\file\\Desktop\\kjh\\Week3-Assignment3\\ElmDocumentVerification.csproj": {}
   },
   "projects": {
-    "D:\\file\\Desktop\\مجلد جديد\\ElmDocumentVerification\\ElmDocumentVerification.csproj": {
+    "D:\\file\\Desktop\\kjh\\Week3-Assignment3\\ElmDocumentVerification.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\file\\Desktop\\مجلد جديد\\ElmDocumentVerification\\ElmDocumentVerification.csproj",
+        "projectUniqueName": "D:\\file\\Desktop\\kjh\\Week3-Assignment3\\ElmDocumentVerification.csproj",
         "projectName": "ElmDocumentVerification",
-        "projectPath": "D:\\file\\Desktop\\مجلد جديد\\ElmDocumentVerification\\ElmDocumentVerification.csproj",
+        "projectPath": "D:\\file\\Desktop\\kjh\\Week3-Assignment3\\ElmDocumentVerification.csproj",
         "packagesPath": "C:\\Users\\RAZAN\\.nuget\\packages\\",
-        "outputPath": "D:\\file\\Desktop\\مجلد جديد\\ElmDocumentVerification\\obj\\",
+        "outputPath": "D:\\file\\Desktop\\kjh\\Week3-Assignment3\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
