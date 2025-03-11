@@ -1,0 +1,79 @@
+<!-- ClientApp\src\app\dashboard\dashboard.component.html -->
+
+<div class="container mt-4">
+  <!-- Heading with background color -->
+  <div class="custom-heading-bg rounded mb-4">
+    <h2 class="mb-0 text-center">Document Dashboard</h2>
+  </div>
+
+  <!-- Buttons placed next to each other using Bootstrap grid -->
+  <div class="row mb-4 justify-content-center">
+    <div class="col-md-3 mb-2 mb-md-0">
+      <button class="btn btn-success w-100 d-flex align-items-center justify-content-center" (click)="navigateToUpload()">
+        <i class="bi bi-upload me-2"></i> Upload Document
+      </button>
+    </div>
+    <div class="col-md-3">
+      <button class="btn btn-outline-success w-100 d-flex align-items-center justify-content-center" (click)="navigateToVerify()">
+        <i class="bi bi-check-circle me-2"></i> Verify
+      </button>
+    </div>
+  </div>
+
+  <!-- Display loading spinner if data is being fetched -->
+  <div *ngIf="loading" class="text-center mt-5">
+    <div class="spinner-border text-success" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="text-muted mt-2">Loading documents...</p>
+  </div>
+
+  <!-- Display error message if there's an error -->
+  <div *ngIf="error" class="alert alert-danger text-center mt-4">
+    {{ error }}
+  </div>
+
+  <!-- Display the table if documents are available -->
+  <div *ngIf="!loading && documents.length > 0" class="card shadow-sm">
+    <div class="card-body p-0">
+      <table class="table table-hover mb-0">
+        <thead class="bg-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">User ID</th>
+            <th scope="col">Status</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let doc of documents; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ doc.title }}</td>
+            <td>{{ doc.userId }}</td>
+            <td>
+              <span class="badge" [ngClass]="{
+                'bg-success': doc.status === 'Verified',
+                'bg-warning': doc.status !== 'Verified',
+              }">
+                {{ doc.status }}
+              </span>
+            </td>
+            <td>{{ doc.createdAt | date: 'medium' }}</td>
+            <td>
+              <button class="btn btn-sm btn-outline-dark me-2" (click)="viewDocument(doc.id)">
+                <i class="bi bi-eye"></i> View
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Display a message if no documents are available -->
+  <div *ngIf="!loading && documents.length === 0" class="text-center mt-5">
+    <p class="text-muted">No documents available. Upload a document to get started!</p>
+  </div>
+</div>

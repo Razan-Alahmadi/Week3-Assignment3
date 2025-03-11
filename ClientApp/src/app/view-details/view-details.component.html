@@ -1,0 +1,31 @@
+<div class="container mt-4">
+    <h2 class="mb-4">Document Details</h2>
+  
+    <!-- Display document details if available -->
+    <div *ngIf="document">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ document.title }}</h5>
+          <p class="card-text"><strong>User ID:</strong> {{ document.userId }}</p>
+          <p class="card-text"><strong>Status:</strong>
+            <span [ngClass]="{
+              'text-success': document.status === 'Verified',
+              'text-danger': document.status === 'Pending'
+            }">
+              {{ document.status }}
+            </span>
+          </p>
+          <p class="card-text"><strong>Created At:</strong> {{ document.createdAt | date: 'medium' }}</p>
+          <p class="card-text"><strong>Verification Code:</strong> {{ document.verificationCode }}</p>
+          <p class="card-text"><strong>File Path:</strong> {{ document.filePath }}</p>
+        </div>
+      </div>
+  
+      <!-- Back button -->
+      <div class="mt-4">
+        <button class="btn btn-secondary" (click)="goBack()">
+          <i class="bi bi-arrow-left"></i> Back to Dashboard
+        </button>
+      </div>
+    </div>
+  </div>
