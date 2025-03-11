@@ -1,0 +1,76 @@
+<!-- ClientApp\src\app\document-upload\document-upload.component.html -->
+
+<div class="container mt-4">
+  <h2 class="mb-4">Upload Document</h2>
+
+  <!-- Display loading spinner while uploading -->
+  <div *ngIf="storeService.state$ | async as state">
+    <div *ngIf="state.loading" class="text-center mb-3">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="text-muted mt-2">Uploading document...</p>
+    </div>
+
+    <!-- Display error message if upload fails -->
+    <div *ngIf="state.error" class="alert alert-danger mb-3">
+      {{ state.error }}
+    </div>
+  </div>
+
+  <!-- Form starts here -->
+  <form #uploadForm="ngForm" (ngSubmit)="onSubmit(uploadForm)">
+    <!-- User ID Field -->
+    <div class="mb-3">
+      <label for="userId" class="form-label">User ID</label>
+      <input type="text" class="form-control" id="userId" name="userId" [(ngModel)]="document.userId" required
+        #userId="ngModel" [ngClass]="{
+      'is-invalid': (userId.touched || isSubmitted) && userId.errors
+    }" />
+      <!-- Validation messages for User ID -->
+      <div *ngIf="(userId.touched || isSubmitted) && userId.errors" class="invalid-feedback">
+        <div *ngIf="userId.errors['required']">User ID is required.</div>
+        <div *ngIf="userId.errors['pattern']">User ID must be a number.</div>
+      </div>
+    </div>
+
+    <!-- Title Field -->
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" name="title" [(ngModel)]="document.title" required
+        maxlength="100" #title="ngModel" [ngClass]="{
+      'is-invalid': (title.touched || isSubmitted) && title.errors
+    }" />
+      <!-- Validation messages for Title -->
+      <div *ngIf="(title.touched || isSubmitted) && title.errors" class="invalid-feedback">
+        <div *ngIf="title.errors['required']">Title is required.</div>
+        <div *ngIf="title.errors['maxlength']">
+          Title cannot exceed 100 characters.
+        </div>
+      </div>
+    </div>
+
+    <!-- File Path Field -->
+    <div class="mb-3">
+      <label for="filePath" class="form-label">File Path</label>
+      <input type="text" class="form-control" id="filePath" name="filePath" [(ngModel)]="document.filePath" required
+        #filePath="ngModel" [ngClass]="{
+      'is-invalid': (filePath.touched || isSubmitted) && filePath.errors
+    }" />
+      <!-- Validation messages for File Path -->
+      <div *ngIf="(filePath.touched || isSubmitted) && filePath.errors" class="invalid-feedback">
+        <div *ngIf="filePath.errors['required']">File Path is required.</div>
+      </div>
+    </div>
+
+    <button class="btn btn-secondary m-3" (click)="goBack()">
+      <i class="bi bi-arrow-left"></i> Back to Dashboard
+    </button>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Upload</button>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+      {{ errorMessage }}
+    </div>
+  </form>
+</div>

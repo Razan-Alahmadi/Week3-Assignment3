@@ -1,0 +1,44 @@
+/* Custom CSS for additional styling */
+.btn-primary {
+    background-color: #007bff; /* Bootstrap primary blue */
+    border-color: #007bff;
+  }
+  
+  .btn-outline-secondary {
+    color: #6c757d; /* Bootstrap secondary gray */
+    border-color: #6c757d;
+  }
+  
+  .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .bg-light {
+    background-color: #f8f9fa !important; /* Light gray */
+  }
+  
+  .badge.bg-success {
+    background-color: #28a745 !important; /* Green */
+  }
+  
+  .badge.bg-warning {
+    background-color: #ffc107 !important; /* Yellow/Orange */
+  }
+  
+  .btn-outline-dark {
+    color: #343a40; /* Dark gray */
+    border-color: #343a40;
+  }
+  
+  .btn-outline-dark:hover {
+    background-color: #343a40;
+    color: white;
+  }
+  /* Custom CSS for heading background */
+.custom-heading-bg {
+    background-color: #343a40; /* A nice shade of blue */
+    color: white; /* Ensure text is readable */
+    padding: 1rem; /* Add padding */
+    border-radius: 0.5rem; /* Rounded corners */
+  }

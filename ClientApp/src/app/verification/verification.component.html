@@ -1,0 +1,43 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Verify Document</h2>
+
+  <!-- Form starts here -->
+  <form #verificationForm="ngForm" (ngSubmit)="onSubmit(verificationForm)">
+    <!-- Verification Code Field -->
+    <div class="mb-3">
+      <label for="verificationCode" class="form-label">Verification Code</label>
+      <input type="text" class="form-control" id="verificationCode" name="verificationCode"
+        [(ngModel)]="verificationRequest.verificationCode" required #verificationCode="ngModel" [ngClass]="{
+      'is-invalid': (verificationCode.touched || isSubmitted) && verificationCode.errors
+    }" aria-describedby="verificationCodeError" />
+      <!-- Validation messages for Verification Code -->
+      <div *ngIf="(verificationCode.touched || isSubmitted) && verificationCode.errors" class="invalid-feedback"
+        id="verificationCodeError">
+        <div *ngIf="verificationCode.errors['required']">Verification Code is required.</div>
+      </div>
+    </div>
+
+    <!-- Verified By Field -->
+    <div class="mb-3">
+      <label for="verifiedBy" class="form-label">Verified By</label>
+      <input type="text" class="form-control" id="verifiedBy" name="verifiedBy"
+        [(ngModel)]="verificationRequest.verifiedBy" required #verifiedBy="ngModel" [ngClass]="{
+      'is-invalid': (verifiedBy.touched || isSubmitted) && verifiedBy.errors
+    }" aria-describedby="verifiedByError" />
+      <!-- Validation messages for Verified By -->
+      <div *ngIf="(verifiedBy.touched || isSubmitted) && verifiedBy.errors" class="invalid-feedback"
+        id="verifiedByError">
+        <div *ngIf="verifiedBy.errors['required']">Verifier name is required.</div>
+      </div>
+    </div>
+    <button class="btn btn-secondary m-3" (click)="goBack()">
+      <i class="bi bi-arrow-left"></i> Back to Dashboard
+    </button>
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary" [disabled]="verificationForm.invalid">Verify</button>
+    <!-- Display API error message -->
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+      {{ errorMessage }}
+    </div>
+  </form>
+</div>
